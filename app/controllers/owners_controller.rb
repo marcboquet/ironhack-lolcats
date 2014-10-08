@@ -15,6 +15,11 @@ class OwnersController < ApplicationController
   # GET /owners/new
   def new
     @owner = Owner.new
+
+    # Initialize an empty cat to show in the form
+    # Same as [Cat.new]
+    @owner.cats.build
+
   end
 
   # GET /owners/1/edit
@@ -69,6 +74,8 @@ class OwnersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def owner_params
-      params.require(:owner).permit(:name)
+      params.require(:owner).permit(:name,
+                cats_attributes: [:name, :birth_date])
+                # Also allow attributes for cats
     end
 end
