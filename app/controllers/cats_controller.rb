@@ -14,7 +14,8 @@ class CatsController < ApplicationController
   end
 
   def search
-    
+    search_term = params[:name]
+    @cats = Cat.where(name: search_term)
   end
 
   def new
