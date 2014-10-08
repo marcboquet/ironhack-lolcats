@@ -2,3 +2,5 @@
 <p><%= @cat.name %> has been alive since <%= @cat.birth_date.to_s(:short)%></p>
 
 <p><%= image_tag @cat.picture %></p>
+
+<p><%= link_to "Delete Image", delete_cat_image_path, method: :delete %>

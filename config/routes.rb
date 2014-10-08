@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # so it overrides the default /cats/:id
   get 'cats/search', to: 'cats#search'
 
+  # Custom route to delete the image of a cat
+  # Only DELETE HTTP method
+  # Matches /cats/2/image, etc.
+  delete 'cats/:id/image', to: 'cats#delete_image', as: 'delete_cat_image'
+  # this will create a delete_cat_image_path var in Rails
+
   resources :cats
 
   # The priority is based upon order of creation: first created -> highest priority.

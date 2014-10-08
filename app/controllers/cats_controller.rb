@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
 
   # Before an action is called, assign the @cat variable
-  before_filter :assign_cat, only: [:show, :destroy]
+  before_filter :assign_cat, only: [:show, :destroy, :delete_image]
   # We only need it for the show and destroy actions
 
   def index
@@ -36,6 +36,14 @@ class CatsController < ApplicationController
     else
       render :new
     end
+  end
+
+  # DELETE /cats/:id/image
+  def delete_image
+    # @cat is already set
+    @cat.remove_picture!
+    @cat.save
+    redirect_to :back
   end
 
   # DELETE /cats/:id
