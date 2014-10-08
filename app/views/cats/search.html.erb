@@ -1,1 +1,11 @@
 <h1>Search for a cat</h1>
+
+<!-- Construct the form for searching -->
+
+<%= form_tag '/cats/search', method: :get do %>
+
+  <%= text_field_tag :name, '', class: 'name-field' %>
+
+  <%= submit_tag 'Search', name: nil %>
+
+<% end %>
