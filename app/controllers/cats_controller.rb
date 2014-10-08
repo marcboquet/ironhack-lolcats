@@ -1,12 +1,14 @@
 class CatsController < ApplicationController
 
   # Before an action is called, assign the @cat variable
-  before_filter :assign_cat, only: [:show] # only the show action
+  before_filter :assign_cat, only: [:show, :destroy]
+  # We only need it for the show and destroy actions
 
   def index
     @cats = Cat.all
   end
 
+  # GET /cats/:id
   def show
     # @cat variable is already initialized
   end
@@ -24,6 +26,12 @@ class CatsController < ApplicationController
     else
       render :new
     end
+  end
+
+  # DELETE /cats/:id
+  def destroy
+    @cat.destroy
+    redirect_to cats_url
   end
 
   private
