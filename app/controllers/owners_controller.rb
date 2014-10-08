@@ -24,6 +24,7 @@ class OwnersController < ApplicationController
 
   # GET /owners/1/edit
   def edit
+    @owner.cats.build
   end
 
   # POST /owners
