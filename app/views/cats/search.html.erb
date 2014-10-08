@@ -4,7 +4,7 @@
 
 <%= form_tag '/cats/search', method: :get do %>
 
-  <%= text_field_tag :name, '', class: 'name-field' %>
+  <%= search_field_tag :name %>
 
   <%= submit_tag 'Search', name: nil %>
 
