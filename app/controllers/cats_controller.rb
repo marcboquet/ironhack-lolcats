@@ -16,7 +16,11 @@ class CatsController < ApplicationController
   def search
     # Query the DB to get all the cats that match name
     search_term = params[:name]
-    @cats = Cat.where('name LIKE ?', "%#{search_term}%")
+    if search_term == '' || search_term.nil?
+      @cats = []
+    else
+      @cats = Cat.where('name LIKE ?', "%#{search_term}%")
+    end
   end
 
   def new
