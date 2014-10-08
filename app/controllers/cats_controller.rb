@@ -14,8 +14,9 @@ class CatsController < ApplicationController
   end
 
   def search
+    # Query the DB to get all the cats that match name
     search_term = params[:name]
-    @cats = Cat.where(name: search_term)
+    @cats = Cat.where('name LIKE ?', "%#{search_term}%")
   end
 
   def new
