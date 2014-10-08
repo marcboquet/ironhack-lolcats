@@ -1,6 +1,7 @@
 class Owner < ActiveRecord::Base
 
-  has_many :cats
+  # When I delete owner, all their cats DIE
+  has_many :cats, dependent: :destroy
 
   # Allow creation of nested models within this
   # (Allow creating cats)
