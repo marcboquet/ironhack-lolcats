@@ -1,2 +1,19 @@
-<h1>Cats#new</h1>
-<p>Find me in app/views/cats/new.html.erb</p>
+<h1>Adding LOLcat</h1>
+
+<%= form_for @cat do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :birth_date %>
+    <%= f.date_select :birth_date %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

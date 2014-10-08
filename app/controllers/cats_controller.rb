@@ -6,6 +6,8 @@ class CatsController < ApplicationController
   end
 
   def new
+    ## Get a new empty cat
+    @cat = Cat.new
   end
 
   def create
