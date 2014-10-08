@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :owners
+
   # Create another route BEFORE the resources
   # so it overrides the default /cats/:id
   get 'cats/search', to: 'cats#search'
