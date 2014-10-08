@@ -17,6 +17,11 @@
                                   data: { confirm: "Are you sure?" }%>
     </span>
 
+    <strong>
+      <!-- Check if it has no owner, display it -->
+      <%= cat.owner.nil? ? "No Owner" : "Has an owner" %>
+    </strong>
+
   </li>
 
 <% end %>
