@@ -19,7 +19,8 @@
 
     <strong>
       <!-- Check if it has no owner, display it -->
-      <%= cat.owner.nil? ? "No Owner" : "Has an owner" %>
+      <%= cat.owner.nil? ? "No Owner" :
+                           link_to("Has an owner", cat.owner) %>
     </strong>
 
   </li>
