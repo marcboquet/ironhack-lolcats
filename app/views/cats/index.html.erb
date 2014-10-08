@@ -12,7 +12,8 @@
 
         <span class='birth-date'>
 
-          <%= cat.birth_date.to_s(:short) %>
+          <!-- Only format the date if birth_date exists -->
+          <%= cat.birth_date.to_s(:short) if cat.birth_date %>
 
         </span>
 
