@@ -13,6 +13,10 @@ class CatsController < ApplicationController
     # @cat variable is already initialized
   end
 
+  def search
+    
+  end
+
   def new
     ## Get a new empty cat
     @cat = Cat.new
